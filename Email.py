@@ -8,6 +8,7 @@ def verificar_emails(lista_emails):
         except EmailNotValidError as e:
             print(f'O e-mail {email} não é válido. Detalhes: {str(e)}.')
 
-lista_de_emails = ['josue21henrique@gmail.com']
+with open('Endereços.txt', 'r') as arquivo:
+    lista_de_emails = [linha.strip() for linha in arquivo]
 
 verificar_emails(lista_de_emails)
